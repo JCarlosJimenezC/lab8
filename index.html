@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Series — TVMaze</title>
+    <link rel="stylesheet" href="css/global.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="site-title">📺 Buscador de Series</h1>
+      <p class="site-subtitle">Busca cualquier serie usando la API de TVMaze</p>
+    </header>
+
+    <main class="main-content">
+      <search class="search-section">
+        <form id="search-form" class="search-form">
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Escribe el nombre de una serie..."
+            autocomplete="off"
+            autofocus
+          >
+          <button type="submit" class="search-btn">Buscar</button>
+        </form>
+      </search>
+
+      <section id="status-section" class="status-section" hidden>
+        <p id="status-message" class="status-message"></p>
+      </section>
+
+      <section id="results-section" class="results-section" hidden>
+        <hgroup class="results-header">
+          <h2 id="results-title" class="results-title"></h2>
+          <p id="results-count" class="results-count"></p>
+        </hgroup>
+        <div id="results-grid" class="results-grid"></div>
+      </section>
+
+      <section id="detail-section" class="detail-section" hidden></section>
+    </main>
+
+    <template id="card-template">
+      <article class="series-card">
+        <div class="card-image-wrapper">
+          <img class="card-image" alt="" loading="lazy" decoding="async">
+          <div class="card-no-image">Sin imagen</div>
+        </div>
+        <div class="card-body">
+          <header class="card-header">
+            <h3 class="card-title"></h3>
+            <span class="card-rating"></span>
+          </header>
+          <div class="card-meta">
+            <span class="card-status"></span>
+            <span class="card-year"></span>
+          </div>
+          <p class="card-genres"></p>
+          <p class="card-summary"></p>
+          <a class="card-link" target="_blank" rel="noopener noreferrer">Ver en TVMaze →</a>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
